@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MemoBoardTest < ActiveSupport::TestCase
+class MemoboardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

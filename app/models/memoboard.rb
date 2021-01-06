@@ -1,0 +1,2 @@
+class Memoboard < ApplicationRecord
+end

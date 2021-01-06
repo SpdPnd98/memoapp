@@ -1,2 +1,0 @@
-class MemoBoard < ApplicationRecord
-end
