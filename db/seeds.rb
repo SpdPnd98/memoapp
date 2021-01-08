@@ -9,3 +9,10 @@
 Memoboard.create(
     memoboard_name: "Master",
 )
+
+# 2.times do |i|
+#     Memo.create(
+#         title: "Hello Rails",
+#         body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+#     )

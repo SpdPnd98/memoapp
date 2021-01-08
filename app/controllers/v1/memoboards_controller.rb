@@ -2,7 +2,7 @@ class V1::MemoboardsController < ApplicationController
     def index
         @memoboards = Memoboard.all
 
-        render json: @memoboards, status: :ok
+        render json: {memoboards: @memoboards}, status: :ok
     end
 
     def create
@@ -23,8 +23,7 @@ class V1::MemoboardsController < ApplicationController
     end
 
     private
-
-    def memoboard_params
-        params.require(:memoboard).permit(:memoboard_name, :owner)
-    end
+        def memoboard_params
+            params.require(:memoboard).permit(:memoboard_name, :owner)
+        end
 end
