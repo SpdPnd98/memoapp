@@ -2,7 +2,7 @@ class V1::MemosController < ApplicationController
     def index
         @memos = Memo.all
 
-        render json: @memo, status: :ok
+        render json: {memos: @memo}, status: :ok
     end
 
     def create
