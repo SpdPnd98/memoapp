@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2021_01_08_201517) do
   create_table "memos", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.string "category"
     t.bigint "memoboard_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
