@@ -1,6 +1,6 @@
 class V1::CategoriesController < ApplicationController
     def index
-        @categories = Category.all
+        @categories = Category.all.order("id ASC")
 
         render json: @categories, status: :ok
     end
@@ -9,16 +9,25 @@ class V1::CategoriesController < ApplicationController
         @category = Category.new(category_params)
 
         @category.save
-        render json: @category, status: :created
+        render json: Category.all.order("id ASC"), status: :ok
     end
 
     def destroy
-        @category = category.where(id: params[:id]).first
+        @category = Category.where(id: params[:id]).first
 
         if @category.destroy
-            head(:ok)
+            render json: Category.all.order("id ASC"), status: :ok
         else
-            head(:unprocessable_entity)
+            render json: Category.all.order("id ASC"), status: :error
+        end
+    end
+
+    def update
+        @category = Category.find(params[:id])
+        if @category.update(category_params)
+            render json: Category.all.order("id ASC"), status: :ok
+        else
+            render json: Category.all.order("id ASC"), status: :error
         end
     end
 

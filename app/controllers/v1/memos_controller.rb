@@ -24,11 +24,6 @@ class V1::MemosController < ApplicationController
         render json: {memos: Memo.all}, status: :ok
     end
 
-    def edit
-        @memoboard = Memoboard.find(params[:memoboard_id])
-        @memo = @memoboard.memos.find(params[:id])
-    end
-
     def update
         @memoboard = Memoboard.find(params[:memoboard_id])
         @memo = @memoboard.memos.find(params[:id])
