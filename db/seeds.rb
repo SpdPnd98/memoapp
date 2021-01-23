@@ -10,6 +10,11 @@ Memoboard.create(
     memoboard_name: "Master",
 )
 
+Category.create(
+    name: "Uncategorized",
+    color:"#FFFFFF"
+)
+
 # 2.times do |i|
 #     Memo.create(
 #         title: "Hello Rails",
